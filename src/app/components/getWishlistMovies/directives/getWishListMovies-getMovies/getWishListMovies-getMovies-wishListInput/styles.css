@@ -1,0 +1,14 @@
+.wish-list-url-input-container label {
+  color: black; }
+
+.wish-list-url-input-container {
+  font-size: 25px;
+  height: 50px;
+  max-width: 500px;
+  min-width: 300px;
+  display: inline-flex;
+  margin-right: 5px;
+  margin-left: 5px; }
+
+.wish-list-url-input {
+  width: 100%; }

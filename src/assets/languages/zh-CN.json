@@ -1,0 +1,20 @@
+{
+"title": "新西兰国际电影节调度工具",
+  "share": "共享",
+  "inputText": "输入您的愿望清单网址",
+  "inputTextPatternError": "请从地址栏复制愿望清单网址",
+  "enterText": "获取愿望清单电影",
+  "filterButtonHint": "切换过滤日期和时间的菜单",
+  "daysOfWeek": {
+    "Monday": "星期一",
+    "Tuesday": "星期二",
+    "Wednesday": "星期三",
+    "Thursday": "星期四",
+    "Friday": "星期五",
+    "Saturday": "星期六",
+    "Sunday": "星期天"
+	},
+  "earliestMovieTime": "最早的电影时间",
+  "latestMovieTime": "最晚电影结束的时间",
+  "eg":	"比如"
+}

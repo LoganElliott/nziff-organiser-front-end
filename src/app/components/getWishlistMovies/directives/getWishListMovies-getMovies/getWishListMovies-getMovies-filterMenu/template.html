@@ -1,0 +1,20 @@
+<div class="filter-container" ng-show="filterMenu.getWishListMoviesService.showFiltersMenu">
+    <md-tabs md-dynamic-height md-border-bottom>
+        <div ng-repeat="day in filterMenu.getWishListMoviesService.dayFilters">
+            <md-tab label={{day.dayOfWeek.substr(0,1)}}>
+                <div class="filter-options">
+                    <div class="switch-container">{{"daysOfWeek." + day.dayOfWeek | translate}}<md-switch ng-model="day.allowedDay" ng-change="filterMenu.getWishListMoviesService.getWishListMovies()" class="md-warn valid-day-toggle" aria-label="day.dayOfWeek"></md-switch>
+                    </div>
+                    <md-input-container>
+                        <label>{{"earliestMovieTime" | translate}}</label>
+                        <input type="time" class="minStartTime" ng-change="filterMenu.getWishListMoviesService.getWishListMovies()"  ng-model="day.minStartTime">
+                    </md-input-container>
+                    <md-input-container >
+                        <label>{{"latestMovieTime" | translate}}</label>
+                        <input type="time" class="maxEndTime" ng-change="filterMenu.getWishListMoviesService.getWishListMovies()" ng-model="day.maxEndTime">
+                    </md-input-container>
+                </div>
+            </md-tab>
+        </div>
+    </md-tabs>
+</div>

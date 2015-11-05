@@ -1,0 +1,19 @@
+# System Files
+.DS_Store
+
+# Editor Files
+/.idea/
+
+# Temp Files
+/.tmp
+
+# Auto Generated Files
+*.map
+
+# Node Modules/Dependencies
+/node_modules
+/jspm_packages
+
+# GitKeep
+# To allow empty folders to be committed.
+!.gitkeep

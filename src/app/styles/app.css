@@ -1,0 +1,37 @@
+.toolbar-language-header-share-container.md-toolbar {
+  min-height: 64px; }
+
+.toolbar-language-header-share.md-toolbar-tools {
+  min-height: 64px;
+  height: auto;
+  max-height: none; }
+  @media (max-width: 414px) {
+    .toolbar-language-header-share.md-toolbar-tools {
+      flex-direction: column; } }
+
+d-get-wish-list-movies-language-select {
+  margin-left: 1%;
+  margin-right: 0.5%; }
+
+header {
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  font-size: x-large;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  header a {
+    text-decoration: none;
+    color: black; }
+
+d-get-wish-list-movies-shareable-link {
+  margin-left: 0.5%;
+  margin-right: 1%; }
+
+d-get-wish-list-movies-get-movies-wish-list-input {
+  margin-top: 10px;
+  margin-bottom: 50px; }
+
+body {
+  background-image: url("http://loganelliott.xyz/assets/images/movieStills/TheLobster.jpg") !important; }

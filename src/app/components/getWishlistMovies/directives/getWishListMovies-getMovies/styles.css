@@ -1,0 +1,30 @@
+.cover-container {
+  position: absolute;
+  top: 30%;
+  width: 100%; }
+
+.move-cover-container {
+  position: static;
+  top: 2%;
+  width: 100%; }
+
+.wish-list-url-button {
+  bottom: 0; }
+
+#input-button-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center; }
+  #input-button-container * {
+    display: inline-flex; }
+
+.wish-list-url-button {
+  margin-right: 5px;
+  margin-left: 5px; }
+
+#input-button-filter-container {
+  display: inline-block; }
+
+.form-group {
+  text-align: center; }

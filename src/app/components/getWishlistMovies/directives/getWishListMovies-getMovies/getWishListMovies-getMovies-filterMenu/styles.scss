@@ -1,0 +1,20 @@
+.filter-container{
+  background: white;
+  max-width: 475px;
+}
+
+.minStartTime, .maxEndTime{
+  width: 7em;
+}
+
+md-input-container{
+  text-align: left;
+}
+
+.filter-options{
+  * {display: inline-block}
+}
+
+.valid-day-toggle {
+  display: block;
+}

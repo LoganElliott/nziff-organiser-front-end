@@ -1,0 +1,20 @@
+{
+  "title": "Te Kaiwhakahaere ā Te International Film Festival ō Aotearoa",
+  "share": "Tohaina atu",
+  "inputText": "Tuhia mai te URL ō tō rarangi kiriata",
+  "inputTextPatternError": "Tēnā tārua te url rārangi hiahia i te pae url",
+  "enterText": "Tirohia ki ngā kiriata mō tō rārangi",
+  "filterButtonHint": "Ka takahuri tahua mō ra te tātari me te wa",
+  "daysOfWeek": {
+    "Monday": "Rāhina",
+    "Tuesday": "Rātū",
+    "Wednesday": "Rāapa",
+    "Thursday": "Rāpare",
+    "Friday": "Rāmere",
+    "Saturday": "Rāhoroi",
+    "Sunday": "Rātapu"
+  },
+  "earliestMovieTime": "Wā kiriata matamua",
+  "latestMovieTime": "Wā kiriata mutunga",
+  "eg": "hei tauira"
+}

@@ -1,0 +1,20 @@
+{
+"title": "New Zealand International Film Festival Organiser",
+  "share": "share",
+  "inputText": "Enter your wish list url",
+  "inputTextPatternError": "Please copy the wish list url from the url bar",
+  "enterText": "Get Wish List Movies",
+  "filterButtonHint": "Toggles menu for filtering days and times",
+  "daysOfWeek": {
+    "Monday": "Monday",
+    "Tuesday": "Tuesday",
+    "Wednesday": "Wednesday",
+    "Thursday": "Thursday",
+    "Friday": "Friday",
+    "Saturday": "Saturday",
+    "Sunday": "Sunday"
+	},
+  "earliestMovieTime": "Earliest movie time",
+  "latestMovieTime": "Latest movie end time",
+  "eg": "e.g"
+}

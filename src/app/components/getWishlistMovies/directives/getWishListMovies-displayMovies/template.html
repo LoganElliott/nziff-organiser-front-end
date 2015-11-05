@@ -1,0 +1,29 @@
+<div class="display-movies-outer-container" ng-class="{'hide-loaded-movies':displayWishListMovies.getWishListMoviesService.busy}">
+    <div id="component-display-wishlist-movies" ng-show="displayWishListMovies.getWishListMoviesService.hasLoadedMovies">
+        <md-list class="display-movies-inner-container" ng-repeat="day in displayWishListMovies.getWishListMoviesService.movies">
+            <div class="day-of-movies-date">
+                {{day.DateWithLanguage}}
+            </div>
+            <md-list ng-repeat="movie in day.Movies">
+                <div class="movies-for-day">
+                    <a class="movie-image" ng-href="{{movie.WebsiteUrl}}"><img ng-src="{{movie.ThumbnailUrl}}"/></a>
+                    <md-list-item class="movie-info md-4-line">
+                        <h2 class="movie-title">
+                            <a ng-href="{{movie.WebsiteUrl}}">{{movie.Title}}</a>
+                        </h2>
+                        <p class="movie-start-date">
+                            {{movie.StartDate | date : 'HH:mm'}}
+                        </p>
+                        <p class="movie-location">
+                            {{movie.Location}}
+                        </p>
+                        <p class="movie-duration">
+                            {{movie.Duration}} mins
+                        </p>
+                    </md-list-item>
+                </div>
+            </md-list>
+            <md-divider md-inset ng-if="!$last"></md-divider>
+        </md-list>
+    </div>
+</div>
