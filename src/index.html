@@ -23,13 +23,6 @@
 
     <body>
         <main ui-view></main>
-
-        <!-- development -->
-        <script src="../jspm_packages/system.js"></script>
-        <script src="../config.js"></script>
-        <script>
-            // lets go! ... and make sure any errors print to console
-            System.import('app/app').catch(console.error.bind(console));
-        </script>
+        <script src="bundle.js"></script>
     </body>
 </html>
