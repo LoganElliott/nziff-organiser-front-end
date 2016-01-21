@@ -1,6 +1,5 @@
 'use strict';
 
-import angular from 'angular';
 import router from './router';
 import getWishListMoviesService from './services/getWishListMovies-service-module';
 import getWishListMoviesLanguageSelect from './directives/getWishListMovies-languageSelect/getWishListMovies-languageSelect-module'

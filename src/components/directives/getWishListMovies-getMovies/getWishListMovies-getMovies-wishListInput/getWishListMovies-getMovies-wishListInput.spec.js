@@ -1,5 +1,4 @@
 'use strict';
-
 import angular from 'angular';
 import 'angular-mocks';
 
@@ -23,7 +22,6 @@ describe('Get wish list movies - get movies test controller', function(){
     it('should get the wish list id from string', function(){
         var correctUrls = ['http://www.nziff.co.nz/s/iDO/','https://www.nziff.co.nz/s/iDO/','www.nziff.co.nz/s/iDO/','http://nziff.co.nz/s/iDO/','https://nziff.co.nz/s/iDO/','http://www.nziff.co.nz/2015/auckland/wishlist/iDO','https://www.nziff.co.nz/2015/auckland/wishlist/iDO','www.nziff.co.nz/2015/auckland/wishlist/iDO','http://nziff.co.nz/2015/auckland/wishlist/iDO','http://nziff.co.nz/2015/auckland/wishlist/iDO'];
         for(var i=0;i < correctUrls.length;i++) {
-            console.log(correctUrls[i]);
            expect(getMoviesController.deconstructUrl(urlRegex,correctUrls[i])).toBe('iDO');
         }
     });
@@ -31,7 +29,6 @@ describe('Get wish list movies - get movies test controller', function(){
     it('should reject incorrect url strings', function(){
         var incorrectUrls = ['http://www.nziff.co.nz/d/iDO','thisIsNotAValidUrl','http://www.notCorrectWebsite.co.nz/s/iDO','http://www.nziff.co.nz/thisShouldBeANumber/auckland/wishlist/iDO','http://www.nziff.co.nz/2015/01234thisShouldBeOnlyLetters01234/wishlist/iDO']
         for(var i=0;i < incorrectUrls.length;i++) {
-            console.log(incorrectUrls[i]);
             expect(function(){getMoviesController.deconstructUrl(urlRegex,incorrectUrls[i])}).toThrowError(Error,'Url is not valid');
         }
     });
@@ -41,7 +38,27 @@ describe('Get wish list movies - get movies test directives', function(){
     let element, scope,translate;
 
     beforeEach(function(){
-        angular.mock.module(getWishListMoviesGetMoviesModule.name);
+        angular.mock.module(getWishListMoviesGetMoviesModule.name,function ($provide) {
+            $provide.value('translateFilter',
+                function(value) {
+                    if(value === "inputTextPatternError"){
+                        return 'Please copy the url wish list exactly';
+                    } else if(value === "eg") {
+                        return 'e.g';
+                    }
+                    return '';
+                }
+            );
+            $provide.provider('$translate', function() {
+                this.$get = function () {
+                    return {
+                        translate: function () {
+                            return '';
+                        }
+                    };
+                }
+            });
+        });
     });
 
     beforeEach(() => {
@@ -64,8 +81,6 @@ describe('Get wish list movies - get movies test directives', function(){
         scope.wishListInput = {deconstructUrlWithRegex: function(){},urlRegex: urlRegex,wishListUrl: 'thisIsAIncorrectUrl'};
         scope.$digest();
         var thing = element[0].querySelector('.pattern-not-meet').innerText;
-        console.log(scope.wishListInput.wishListUrl);
-        console.log(element);
         expect(thing).toBe('Please copy the url wish list exactly e.g http://www.nziff.co.nz/s/iDO');
     });
 });

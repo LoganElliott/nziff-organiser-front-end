@@ -17,3 +17,9 @@
 # GitKeep
 # To allow empty folders to be committed.
 !.gitkeep
+
+# dist folder
+/reports
+
+# debug file
+npm-debug.log

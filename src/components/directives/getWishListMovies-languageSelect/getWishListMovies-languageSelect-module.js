@@ -1,4 +1,3 @@
-import angular from 'angular';
 import languageSelectController from './controller';
 import getWishListMoviesLanguageSelect from './getWishListMovies-languageSelect';
 

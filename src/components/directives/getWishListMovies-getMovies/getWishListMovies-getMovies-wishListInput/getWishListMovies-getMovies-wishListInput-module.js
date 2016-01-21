@@ -1,4 +1,3 @@
-import angular from 'angular';
 import wishListInputController from './controller';
 import getWishListMoviesGetMoviesWishListInput from './getWishListMovies-getMovies-wishListInput';
 

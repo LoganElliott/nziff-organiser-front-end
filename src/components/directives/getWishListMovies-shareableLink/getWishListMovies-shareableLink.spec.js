@@ -1,7 +1,5 @@
 'use strict';
 
-import angular from 'angular';
-import 'angular-mocks';
 
 import getWishListMoviesShareableLinkModule from './getWishListMovies-shareableLink-module';
 import Controller from './controller';

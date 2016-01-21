@@ -1,8 +1,5 @@
 'use strict';
 
-import angular from 'angular';
-import 'angular-mocks';
-
 import getWishListMoviesServiceModule from './getWishListMovies-service-module';
 
 describe('Get wish list movies - service', function(){
