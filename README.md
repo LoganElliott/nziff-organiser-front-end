@@ -26,4 +26,4 @@ Tools needed to run this app:
 * `npm run start` to launch application browse to [http://localhost:4000/](http://localhost:4000/)
 
 ## Tests
-* `npm run tests` to run tests and test code coverage
+* `npm run test` to run tests and test code coverage
