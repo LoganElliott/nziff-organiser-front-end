@@ -6,45 +6,48 @@
   "main": "gulpfile.js",
   "license": "MIT",
   "scripts": {
-    "test": "gulp",
-    "dev": "SET NODE_ENV=development && node server/app.js",
-    "prod": "SET NODE_ENV=production && PORT=3000 && node server/app.js"
+    "start": "webpack-dev-server --content-base ./src",
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/LoganElliott/nziff-organiser-front-end.git"
   },
-  "jspm": {
-    "dependencies": {
-      "angular": "github:angular/bower-angular@^1.4.6",
-      "angular-messages": "github:angular/bower-angular-messages@^1.4.7",
-      "angular-mocks": "github:angular/bower-angular-mocks@^1.4.5",
-      "angular-translate": "github:angular-translate/bower-angular-translate@^2.8.0",
-      "angular-translate-loader-static-files": "github:angular-translate/bower-angular-translate-loader-static-files@^2.8.0",
-      "clean-css": "npm:clean-css@^3.3.9",
-      "jsurl": "npm:jsurl@^0.1.0",
-      "lodash": "npm:lodash@^3.10.1",
-      "systemjs/plugin-text": "github:systemjs/plugin-text@^0.0.2"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
-    }
-  },
   "devDependencies": {
-    "babel": "^5.8.23",
-    "del": "^1.2.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.0.4",
-    "gulp-util": "^3.0.6",
+    "babel-core": "6.3.15",
+    "babel-loader": "6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "css-loader": "^0.23.1",
+    "html-loader": "^0.4.0",
+    "isparta-loader": "^2.0.0",
     "jasmine": "^2.3.2",
     "jasmine-core": "^2.3.4",
-    "karma": "^0.13.9",
-    "karma-babel-preprocessor": "^5.2.2",
+    "karma": "^0.13.19",
+    "karma-babel-preprocessor": "^6.0.1",
     "karma-chrome-launcher": "^0.2.0",
+    "karma-coverage": "^0.5.3",
+    "karma-html-reporter": "^0.2.7",
     "karma-jasmine": "^0.3.6",
-    "karma-jspm": "^2.0.1",
-    "karma-phantomjs-launcher": "^0.2.1"
+    "karma-mocha-reporter": "^1.1.5",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "angular": "^1.4.8",
+    "angular-animate": "^1.4.8",
+    "angular-aria": "^1.4.8",
+    "angular-material": "^1.0.2",
+    "angular-messages": "^1.4.8",
+    "angular-mocks": "^1.4.8",
+    "angular-translate": "^2.8.1",
+    "angular-translate-loader-static-files": "^2.8.1",
+    "angular-ui-router": "^1.0.0-alpha0",
+    "jsurl": "^0.1.2",
+    "lodash": "^4.0.0"
   }
 }
