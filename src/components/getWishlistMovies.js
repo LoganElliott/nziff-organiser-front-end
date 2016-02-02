@@ -3,7 +3,6 @@
 import router from './router';
 import getWishListMoviesService from './services/getWishListMovies-service-module';
 import getWishListMoviesLanguageSelect from './directives/getWishListMovies-languageSelect/getWishListMovies-languageSelect-module'
-import getWishListMoviesShareableLink from './directives/getWishListMovies-shareableLink/getWishListMovies-shareableLink-module';
 import getWishListMoviesGetMovies from './directives/getWishListMovies-getMovies/getWishListMovies-getMovies-module';
 import getWishListMoviesLoadingWheel from './directives/getWishListMovies-LoadingWheel/getWishListMovies-loadingWheel-module';
 import getWishListMoviesDisplayMovies from './directives/getWishListMovies-displayMovies/getWishListMovies-displayMovies-module';
@@ -12,7 +11,6 @@ let getMoviesModule = angular.module('component.getWishListMovies', [
         getWishListMoviesService.name,
         getWishListMoviesGetMovies.name,
         getWishListMoviesDisplayMovies.name,
-        getWishListMoviesShareableLink.name,
         getWishListMoviesLoadingWheel.name,
         getWishListMoviesLanguageSelect.name
     ]);

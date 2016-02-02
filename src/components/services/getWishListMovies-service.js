@@ -11,48 +11,11 @@ class Service {
         this.wishListId = '';
         this.dayFilters = _.cloneDeep(config.dayFilterDefaults);
         this.apiUrl = config.apiUrl;
-        this.isLinkShared = false;
         this.showFiltersMenu = false;
-        this.deconstructQueryData($location.search().state);
         this.languageCode = 'en-NZ';
         if(this.wishListId.length != 0){
             this.getWishListMovies();
         }
-    }
-
-    deconstructQueryData(urlState){
-        var state = JSURL.parse(urlState);
-        if(state != null){
-            this.wishListId = state.wishListId;
-            this.dayFilters = this.mergeNewFiltersWithDefaults(this.dayFilters,state.dayFilters);
-        }
-    }
-
-    mergeNewFiltersWithDefaults(defaultDayFilters,newDayFilters){
-        var mergedFilters = [];
-        var newDayFiltersDictionary = {};
-        for(var filter of newDayFilters){
-            newDayFiltersDictionary[filter.dayOfWeek] = filter;
-        }
-        for(var i =0;i < defaultDayFilters.length;i++){
-            var defaultFilter = defaultDayFilters[i];
-            var currentDay = newDayFiltersDictionary[defaultFilter.dayOfWeek];
-            if(currentDay != null){
-                if(currentDay.minStartTime != null){
-                    currentDay.minStartTime = new Date(currentDay.minStartTime + (new Date(0)).getTimezoneOffset()*60000);
-                }
-
-                if(currentDay.maxEndTime != null){
-                    currentDay.maxEndTime = new Date(currentDay.maxEndTime + (new Date(0)).getTimezoneOffset()*60000);
-                }
-
-                var mergedFilter = _.merge(defaultFilter,currentDay);
-                mergedFilters.push(mergedFilter);
-            } else{
-                mergedFilters.push(defaultFilter);
-            }
-        }
-        return mergedFilters;
     }
 
     getWishListMovies(){
@@ -87,13 +50,11 @@ class Service {
                 this.hasLoadedMovies = false;
             }).then( () => {
                 this.busy = false;
-                this.isLinkShared = false;
             });
         }catch(err) {
             this.movies.length = 0;
             this.busy = false;
             this.hasLoadedMovies = false;
-            this.isLinkShared = false;
             console.log(err);
             console.log("Unable to retrieve movies from wish list url");
         }
