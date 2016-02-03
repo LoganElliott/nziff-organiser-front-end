@@ -2,7 +2,7 @@
 
 import './styles.scss';
 import template from './template.html';
-import controller from './controller';
+import controller from './languageSelect.controller';
 
 let directive = () => {
     return {

@@ -1,4 +1,4 @@
-import getWishListMoviesGetMoviesFilterMenu from './getWishListMovies-getMovies-filterMenu';
+import getWishListMoviesGetMoviesFilterMenu from './filterMenu.directive.js';
 
 export default angular.module('component.getWishListMovies.filterMenu', [])
     .directive('dGetWishListMoviesGetMoviesFilterMenu',getWishListMoviesGetMoviesFilterMenu)

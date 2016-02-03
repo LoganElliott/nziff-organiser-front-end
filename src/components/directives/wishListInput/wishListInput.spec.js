@@ -2,8 +2,8 @@
 import angular from 'angular';
 import 'angular-mocks';
 
-import getWishListMoviesGetMoviesModule from './getWishListMovies-getMovies-wishListInput-module';
-import Controller from './controller';
+import getWishListMoviesGetMoviesModule from './wishListInput.module.js';
+import Controller from './wishListInput.controller.js';
 
 let urlRegex = new RegExp('(?:https?:\/\/)?(?:www\.)?nziff\.co\.nz\/(?:[0-9]{4}\/[a-z]+\/wishlist|s)\/([A-Za-z0-9]+)');
 

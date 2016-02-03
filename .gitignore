@@ -9,7 +9,7 @@
 
 # Auto Generated Files
 *.map
-*bundle.js
+*/bundle.js
 
 # Node Modules/Dependencies
 /node_modules

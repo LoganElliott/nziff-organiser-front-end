@@ -1,5 +1,5 @@
-import languageSelectController from './controller';
-import getWishListMoviesLanguageSelect from './getWishListMovies-languageSelect';
+import languageSelectController from './languageSelect.controller';
+import getWishListMoviesLanguageSelect from './languageSelect.directive';
 
 export default angular.module('component.getWishListMovies.languageSelect', [])
     .controller('LanguageSelectController',languageSelectController)

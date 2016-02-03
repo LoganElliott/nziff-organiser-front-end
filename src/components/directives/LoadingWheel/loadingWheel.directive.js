@@ -1,7 +1,6 @@
 'use strict';
 
 import './styles.scss';
-import template from './template.html';
 
 let directive = (getWishListMoviesService) => {
     var controller = ['getWishListMoviesService',function(getWishListMoviesService){
@@ -10,7 +9,7 @@ let directive = (getWishListMoviesService) => {
     return {
         controller: controller,
         controllerAs: 'loadingWheel',
-        template,
+        template:`<md-progress-circular md-mode="indeterminate" md-diameter="60" id="movies-loading-spinner" ng-show="loadingWheel.getWishListMoviesService.busy"></md-progress-circular>`,
         bindToController: true
     };
 };

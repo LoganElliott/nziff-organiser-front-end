@@ -2,18 +2,18 @@
 
 import router from './router';
 import getWishListMoviesService from './services/getWishListMovies-service-module';
-import getWishListMoviesLanguageSelect from './directives/getWishListMovies-languageSelect/getWishListMovies-languageSelect-module'
-import getWishListMoviesGetMovies from './directives/getWishListMovies-getMovies/getWishListMovies-getMovies-module';
-import getWishListMoviesLoadingWheel from './directives/getWishListMovies-LoadingWheel/getWishListMovies-loadingWheel-module';
-import getWishListMoviesDisplayMovies from './directives/getWishListMovies-displayMovies/getWishListMovies-displayMovies-module';
+import languageSelect from './directives/languageSelect/languageSelect.module'
+import getWishListMoviesGetMovies from './directives/getMovies/getWishListMovies-getMovies-module';
+import loadingWheel from './directives/LoadingWheel/loadingWheel.module';
+import displayMovies from './directives/displayMovies/displayMovies.module';
 
 let getMoviesModule = angular.module('component.getWishListMovies', [
-        getWishListMoviesService.name,
-        getWishListMoviesGetMovies.name,
-        getWishListMoviesDisplayMovies.name,
-        getWishListMoviesLoadingWheel.name,
-        getWishListMoviesLanguageSelect.name
-    ]);
+    getWishListMoviesService.name,
+    getWishListMoviesGetMovies.name,
+    displayMovies.name,
+    loadingWheel.name,
+    languageSelect.name
+]);
 
 var baseWebsiteUrl = 'http://www.loganelliott.xyz';
 getMoviesModule.constant('config',{
