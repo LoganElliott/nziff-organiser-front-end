@@ -1,8 +1,8 @@
 <md-input-container class="language-select">
     <label class="language-label" ng-show="false">Language</label>
     <md-tooltip>Language</md-tooltip>
-    <md-select ng-model="languageSelect.getWishListMoviesService.languageCode" ng-change="languageSelect.changeLanguage()">
-        <md-option ng-repeat="language in languageSelect.languages" value="{{language.code}}">
+    <md-select ng-model="languageSelect.currentLanguage" ng-change="languageSelect.changeLanguage()">
+        <md-option ng-repeat="language in languageSelect.language.languages" value="{{language.code}}">
             {{language.name}}
         </md-option>
     </md-select>

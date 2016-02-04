@@ -3,7 +3,7 @@ import JSURL from 'jsurl';
 import _ from 'lodash';
 
 class Service {
-    constructor($http,$location,config) {
+    constructor($http,config,$translate) {
         this.$http = $http;
         this.busy = false;
         this.hasLoadedMovies = false;
@@ -12,10 +12,10 @@ class Service {
         this.dayFilters = _.cloneDeep(config.dayFilterDefaults);
         this.apiUrl = config.apiUrl;
         this.showFiltersMenu = false;
-        this.languageCode = 'en-NZ';
         if(this.wishListId.length != 0){
             this.getWishListMovies();
         }
+        this.$translate = $translate;
     }
 
     getWishListMovies(){
@@ -28,7 +28,7 @@ class Service {
         try{
             var apiMethod = 'getWishListJson';
 
-            var fullPostUrl = this.apiUrl + '/' + apiMethod + '/' + this.wishListId + '?locale=' + this.languageCode;
+            var fullPostUrl = this.apiUrl + '/' + apiMethod + '/' + this.wishListId + '?locale=' + this.$translate.use();
 
             var adjustedFilters = this.fixFilterTimeZones(this.dayFilters);
 
@@ -82,4 +82,4 @@ class Service {
     }
 }
 
-export default ['$http','$location','config',Service];
+export default ['$http','config','$translate',Service];

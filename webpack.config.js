@@ -3,10 +3,12 @@ var path = require('path');
 var src = path.join(__dirname, 'src');
 
 var config = {
+    devtool: "source-map",
     entry: path.join(src, '/app.js'),
     output: {
         path: path.join(src),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        pathinfo: true
     },
     module: {
         loaders: [

@@ -22,15 +22,15 @@ let app = angular.module('app', [
     getWishListMovies.name
 ]);
 
-app.config(['$mdThemingProvider','$urlRouterProvider', '$locationProvider','$translateProvider','$stateProvider', ($mdThemingProvider, $urlRouterProvider, $locationProvider,$translateProvider,$stateProvider) => {
+app.config(['$mdThemingProvider', '$urlRouterProvider', '$locationProvider', '$translateProvider', '$stateProvider', ($mdThemingProvider, $urlRouterProvider, $locationProvider, $translateProvider, $stateProvider) => {
 
     $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/');
 
     $mdThemingProvider.theme('default')
         .primaryPalette('blue', {'default': '900'})
-        .accentPalette('blue-grey',{'default': '900'})
-        .warnPalette('red',{'default': '900'});
+        .accentPalette('blue-grey', {'default': '900'})
+        .warnPalette('red', {'default': '900'});
 
     $translateProvider.useSanitizeValueStrategy('escape');
 
@@ -43,29 +43,25 @@ app.config(['$mdThemingProvider','$urlRouterProvider', '$locationProvider','$tra
 
     $stateProvider.state('getWishListMovies', {
         url: '/',
-        template:`<d-nziffo-movies></d-nziffo-movies>`
+        template: `<d-nziffo-movies></d-nziffo-movies>`
     });
 
 }]);
 
 var baseWebsiteUrl = 'http://www.loganelliott.xyz';
-app.constant('config',{
+app.constant('config', {
     apiUrl: baseWebsiteUrl + '/api',
     nziffoUrl: baseWebsiteUrl + '/nziffo',
     dayFilterDefaults: [
-        {dayOfWeek: 'Sunday', allowedDay: true,minStartTime:0,maxEndTime: 0},
-        {dayOfWeek: 'Saturday', allowedDay: true,minStartTime: 0,maxEndTime: 0},
-        {dayOfWeek: 'Friday', allowedDay: true,minStartTime: 0,maxEndTime:0},
-        {dayOfWeek: 'Thursday', allowedDay: true,minStartTime: 0,maxEndTime: 0},
-        {dayOfWeek: 'Wednesday', allowedDay: true,minStartTime: 0,maxEndTime: 0},
-        {dayOfWeek: 'Tuesday', allowedDay: true,minStartTime: 0,maxEndTime: 0},
-        {dayOfWeek: 'Monday' , allowedDay: true,minStartTime: 0,maxEndTime: 0}
-    ],
-    languages:[
-        { name: 'English', code: 'en-NZ' },
-        { name: 'Te Reo', code: 'mi-NZ' },
-        { name: '中文', code: 'zh-CN' }
-    ]});
+        {dayOfWeek: 'Sunday', allowedDay: true, minStartTime: 0, maxEndTime: 0},
+        {dayOfWeek: 'Saturday', allowedDay: true, minStartTime: 0, maxEndTime: 0},
+        {dayOfWeek: 'Friday', allowedDay: true, minStartTime: 0, maxEndTime: 0},
+        {dayOfWeek: 'Thursday', allowedDay: true, minStartTime: 0, maxEndTime: 0},
+        {dayOfWeek: 'Wednesday', allowedDay: true, minStartTime: 0, maxEndTime: 0},
+        {dayOfWeek: 'Tuesday', allowedDay: true, minStartTime: 0, maxEndTime: 0},
+        {dayOfWeek: 'Monday', allowedDay: true, minStartTime: 0, maxEndTime: 0}
+    ]
+});
 
 angular.element(document).ready(function () {
 
@@ -74,9 +70,11 @@ angular.element(document).ready(function () {
     angular.bootstrap(document, ['app'], {
         // Enable strict dependency injection mode (throws error, rather than fail silently)
         strictDi: true
-    } );
+    });
 
     // Bootstrap complete:
-    if (console && typeof console.time !== 'undefined') { console.timeEnd('App Startup Time'); }
+    if (console && typeof console.time !== 'undefined') {
+        console.timeEnd('App Startup Time');
+    }
 
-} );
+});

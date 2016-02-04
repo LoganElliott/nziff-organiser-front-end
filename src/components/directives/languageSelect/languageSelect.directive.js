@@ -6,11 +6,14 @@ import controller from './languageSelect.controller';
 
 let directive = () => {
     return {
+        scope: {},
+        restrict: 'E',
         controller: controller,
         controllerAs: 'languageSelect',
         template,
-        bindToController: true
+        bindToController: {
+            currentLanguage: '@'
+        }
     };
 };
-
 export default ['getWishListMoviesService', directive];

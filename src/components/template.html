@@ -1,14 +1,11 @@
 <md-toolbar class="toolbar-language-header-share-container">
     <div class="md-toolbar-tools toolbar-language-header-share">
-        <d-get-wish-list-movies-language-select></d-get-wish-list-movies-language-select>
+        <d-language-select current-language='{{getWishListMoviesMain.currentLanguage}}'></d-language-select>
         <header>
         <a href="http://www.loganelliott.xyz/nziffo">{{'title' | translate }}</a>
         </header>
     </div>
 </md-toolbar>
 <d-get-wish-list-movies-get-movies></d-get-wish-list-movies-get-movies>
-<d-get-wish-list-movies-loading-wheel isBusy="getWishListMovies.getWishListMoviesService.busy"></d-get-wish-list-movies-loading-wheel>
+<d-get-wish-list-movies-loading-wheel isBusy="getWishListMoviesMain.getWishListMoviesService.busy"></d-get-wish-list-movies-loading-wheel>
 <d-get-wish-list-movies-display-movies></d-get-wish-list-movies-display-movies>
-
-
-
