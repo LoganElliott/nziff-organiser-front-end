@@ -1,17 +1,14 @@
 'use strict';
-
+import angular from 'angular';
 import './styles.scss';
 
-let directive = (getWishListMoviesService) => {
-    var controller = ['getWishListMoviesService',function(getWishListMoviesService){
-        this.getWishListMoviesService = getWishListMoviesService;
-    }];
+let directive = () => {
     return {
-        controller: controller,
+        controller: angular.noop,
         controllerAs: 'loadingWheel',
-        template:`<md-progress-circular md-mode="indeterminate" md-diameter="60" id="movies-loading-spinner" ng-show="loadingWheel.getWishListMoviesService.busy"></md-progress-circular>`,
-        bindToController: true
+        template:`<md-progress-circular md-mode="indeterminate" md-diameter="60" id="movies-loading-spinner" ng-show="loadingWheel.isBusy"></md-progress-circular>`,
+        bindToController: {isBusy: '=isBusy'}
     };
 };
 
-export default ['getWishListMoviesService', directive];
+export default directive;

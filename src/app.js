@@ -10,7 +10,7 @@ import 'angular-messages'
 import 'angular-ui-router';
 import 'angular-translate';
 import 'angular-translate-loader-static-files';
-import getWishListMovies from './components/getWishlistMovies';
+import getWishListMovies from './components/getWishListMovies.module.js';
 
 let app = angular.module('app', [
     'ngAnimate',
@@ -22,7 +22,7 @@ let app = angular.module('app', [
     getWishListMovies.name
 ]);
 
-app.config(['$mdThemingProvider','$urlRouterProvider', '$locationProvider','$translateProvider', ($mdThemingProvider, $urlRouterProvider, $locationProvider,$translateProvider) => {
+app.config(['$mdThemingProvider','$urlRouterProvider', '$locationProvider','$translateProvider','$stateProvider', ($mdThemingProvider, $urlRouterProvider, $locationProvider,$translateProvider,$stateProvider) => {
 
     $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/');
@@ -41,7 +41,31 @@ app.config(['$mdThemingProvider','$urlRouterProvider', '$locationProvider','$tra
 
     $translateProvider.preferredLanguage('en-NZ');
 
+    $stateProvider.state('getWishListMovies', {
+        url: '/',
+        template:`<d-nziffo-movies></d-nziffo-movies>`
+    });
+
 }]);
+
+var baseWebsiteUrl = 'http://www.loganelliott.xyz';
+app.constant('config',{
+    apiUrl: baseWebsiteUrl + '/api',
+    nziffoUrl: baseWebsiteUrl + '/nziffo',
+    dayFilterDefaults: [
+        {dayOfWeek: 'Sunday', allowedDay: true,minStartTime:0,maxEndTime: 0},
+        {dayOfWeek: 'Saturday', allowedDay: true,minStartTime: 0,maxEndTime: 0},
+        {dayOfWeek: 'Friday', allowedDay: true,minStartTime: 0,maxEndTime:0},
+        {dayOfWeek: 'Thursday', allowedDay: true,minStartTime: 0,maxEndTime: 0},
+        {dayOfWeek: 'Wednesday', allowedDay: true,minStartTime: 0,maxEndTime: 0},
+        {dayOfWeek: 'Tuesday', allowedDay: true,minStartTime: 0,maxEndTime: 0},
+        {dayOfWeek: 'Monday' , allowedDay: true,minStartTime: 0,maxEndTime: 0}
+    ],
+    languages:[
+        { name: 'English', code: 'en-NZ' },
+        { name: 'Te Reo', code: 'mi-NZ' },
+        { name: '中文', code: 'zh-CN' }
+    ]});
 
 angular.element(document).ready(function () {
 

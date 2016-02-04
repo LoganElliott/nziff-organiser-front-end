@@ -9,7 +9,7 @@ let directive = (getWishListMoviesService) => {
     }];
     return {
         controller: controller,
-        controllerAs: 'filterMenuButton',
+        controllerAs: 'getWishListMovies',
         template,
         bindToController: true
     };
