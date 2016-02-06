@@ -7,7 +7,7 @@
 
                     <md-button class="md-raised wish-list-url-button " ng-disabled="getWishListMovies.getWishListMoviesService.busy" ng-click="getWishListMovies.getWishListMoviesService.getWishListMovies()">{{'enterText' | translate}}</md-button>
                 </div>
-                <d-get-wish-list-movies-get-movies-filter-menu></d-get-wish-list-movies-get-movies-filter-menu>
+                <d-filter-menu day-filters="getWishListMovies.getWishListMoviesService.dayFilters"></d-filter-menu>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <div class="show-filter-menu-button">
-    <md-button type="button" class="md-fab md-mini md-primary md-hue-2" aria-label="Show filter menu" ng-click="filterMenu.getWishListMoviesService.showFiltersMenu=!filterMenu.getWishListMoviesService.showFiltersMenu">
+    <md-button type="button" class="md-fab md-mini md-primary md-hue-2" aria-label="Show filter menu" ng-click="showFiltersMenu=!showFiltersMenu">
         <md-icon md-svg-src="/assets/images/icons/filter.svg"></md-icon>
         <md-tooltip md-autohide md-delay="750">
             {{"filterButtonHint"| translate}}
@@ -7,20 +7,20 @@
     </md-button>
 </div>
 
-<div ng-if="filterMenu.getWishListMoviesService.showFiltersMenu" class="filter-container">
+<div ng-if="showFiltersMenu" class="filter-container">
     <md-tabs md-dynamic-height md-border-bottom>
-        <div ng-repeat="day in filterMenu.getWishListMoviesService.dayFilters">
+        <div ng-repeat="day in filterMenu.dayFilters">
             <md-tab label={{day.dayOfWeek.substr(0,1)}}>
                 <div class="filter-options">
-                    <div class="switch-container">{{"daysOfWeek." + day.dayOfWeek | translate}}<md-switch ng-model="day.allowedDay" ng-change="filterMenu.getWishListMoviesService.getWishListMovies()" class="md-warn valid-day-toggle" aria-label="day.dayOfWeek"></md-switch>
+                    <div class="switch-container">{{"daysOfWeek." + day.dayOfWeek | translate}}<md-switch ng-model="day.allowedDay" class="md-warn valid-day-toggle" aria-label="day.dayOfWeek"></md-switch>
                     </div>
                     <md-input-container>
                         <label>{{"earliestMovieTime" | translate}}</label>
-                        <input type="time" class="minStartTime" ng-change="filterMenu.getWishListMoviesService.getWishListMovies()"  ng-model="day.minStartTime">
+                        <input type="time" class="minStartTime" ng-model="day.minStartTime">
                     </md-input-container>
                     <md-input-container >
                         <label>{{"latestMovieTime" | translate}}</label>
-                        <input type="time" class="maxEndTime" ng-change="filterMenu.getWishListMoviesService.getWishListMovies()" ng-model="day.maxEndTime">
+                        <input type="time" class="maxEndTime" ng-model="day.maxEndTime">
                     </md-input-container>
                 </div>
             </md-tab>

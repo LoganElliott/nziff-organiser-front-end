@@ -3,16 +3,15 @@
 import './styles.scss';
 import template from './template.html';
 
-let directive = (getWishListMoviesService) => {
-    var controller = ['getWishListMoviesService',function(getWishListMoviesService){
-        this.getWishListMoviesService = getWishListMoviesService;
-    }];
+let directive = () => {
     return {
-        controller: controller,
+        controller: angular.noop,
         controllerAs: 'filterMenu',
         template,
-        bindToController: true
+        bindToController: {
+            dayFilters: '='
+        }
     };
 };
 
-export default ['getWishListMoviesService', directive];
+export default directive;
