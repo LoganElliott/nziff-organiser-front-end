@@ -2,14 +2,19 @@
 
 import './styles.scss';
 import template from './template.html';
+import controller from './wishListInput.controller';
 
 let directive = () => {
     return {
-        controller: 'WishListInputController',
+        scope: {},
+        restrict: 'E',
+        controller: controller,
         controllerAs: 'wishListInput',
         template,
-        bindToController: true
+        bindToController: {
+            wishListId: '='
+        }
     };
 };
 
-export default ['getWishListMoviesService', directive];
+export default directive;

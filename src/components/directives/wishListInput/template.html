@@ -1,10 +1,12 @@
 <md-input-container class="wish-list-url-input-container" md-no-float>
     <label class="">{{'inputText' | translate}}</label>
-    <input class="wish-list-url-input" name="wishListUrl" ng-model="wishListInput.wishListUrl" ng-change="wishListInput.deconstructUrlWithRegex()" ng-pattern='wishListInput.urlRegex' autocapitalize="none">
+    <input class="wish-list-url-input"
+           name="wishListUrlInputField"
+           ng-model="wishListUrl"
+           ng-change="wishListInput.deconstructUrlWithRegex(wishListUrl)"
+           ng-pattern='wishListInput.urlRegex'
+           autocapitalize="none">
     <md-tooltip md-autohide md-delay="500">
         {{"eg" | translate}} http://www.nziff.co.nz/s/iDO
     </md-tooltip>
-    <div ng-messages="wishListUrlInputForm.wishListUrl.$error">
-        <div class="pattern-not-meet" ng-message="pattern">{{"inputTextPatternError" | translate}} {{"eg" | translate}} http://www.nziff.co.nz/s/iDO</div>
-    </div>
 </md-input-container>

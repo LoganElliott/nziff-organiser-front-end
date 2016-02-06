@@ -19,7 +19,7 @@ class Service {
     }
 
     getWishListMovies(){
-        if (this.busy || this.wishListId == '') {
+        if (this.busy || !this.wishListId) {
             return;
         }
 
