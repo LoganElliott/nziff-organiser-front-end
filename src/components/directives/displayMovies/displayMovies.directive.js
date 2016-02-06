@@ -3,16 +3,19 @@
 import './styles.scss';
 import template from './template.html';
 
-let directive = (getWishListMoviesService) => {
-    var controller = ['getWishListMoviesService',function(getWishListMoviesService){
-        this.getWishListMoviesService = getWishListMoviesService;
-    }];
+let directive = () => {
     return {
-        controller: controller,
-        controllerAs: 'displayWishListMovies',
+        scope: {},
+        restrict: 'E',
+        controller: angular.noop,
+        controllerAs: 'displaytMovies',
         template,
-        bindToController: true
+        bindToController: {
+            isBusy: '=',
+            hasLoadedMovies: '=',
+            movies: '='
+        }
     };
 };
 
-export default ['getWishListMoviesService', directive];
+export default directive;

@@ -1,6 +1,6 @@
-<div class="display-movies-outer-container" ng-class="{'hide-loaded-movies':displayWishListMovies.getWishListMoviesService.busy}">
-    <div id="component-display-wishlist-movies" ng-show="displayWishListMovies.getWishListMoviesService.hasLoadedMovies">
-        <md-list class="display-movies-inner-container" ng-repeat="day in displayWishListMovies.getWishListMoviesService.movies">
+<div class="display-movies-outer-container" ng-class="{'hide-loaded-movies':displaytMovies.busy}">
+    <div id="component-display-wishlist-movies" ng-show="displayWishListMovies.hasLoadedMovies">
+        <md-list class="display-movies-inner-container" ng-repeat="day in displaytMovies.movies">
             <div class="day-of-movies-date">
                 {{day.DateWithLanguage}}
             </div>
